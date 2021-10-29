@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Our Shop</title>
+</head>
+<body>
+    <font size=4 color="blue">
+    <?php
+        $today = date('l, F d, Y');
+        print "Welcome on $today to our huge blowout sale";
+        $month = date('m');
+        $year = date('Y');
+        $dayofyear = date('z');
+        if ($month == 12 && $year == 2001) {
+            $daysleft = (365 - $dayofyear + 10);
+            print "<br> There are $daysleft sales days left";
+        } else if ($month == 01 && $year == 2002) {
+            if ($dayofyear <= 10) {
+                $daysleft = (365 - $dayofyear);
+                print "<br> There are $daysleft sales days left";
+            } else {
+                print "<br> Sorry, our sale is over";
+            }
+        } else {
+            print "<br> Sorry, our sale is over";
+        }
+        print "<br> Our sale ends Janurary 10th, 2002";
+    ?>
+    </font>
+</body>
+</html>
